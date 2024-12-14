@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=4 uid="uid://dfa4e18g58spu"]
+[gd_scene load_steps=5 format=4 uid="uid://dfa4e18g58spu"]
 
 [ext_resource type="Texture2D" uid="uid://cdlt71tgb1kuf" path="res://Rocky Roads/Tilesets/tileset_snow.png" id="1_8u5s8"]
+[ext_resource type="PackedScene" uid="uid://bm13eawgpamj2" path="res://Scenes/Player/Player.tscn" id="2_67lva"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_asjun"]
 texture = ExtResource("1_8u5s8")
@@ -40,3 +41,6 @@ sources/0 = SubResource("TileSetAtlasSource_asjun")
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 tile_map_data = PackedByteArray("AAAAAAAAAAAHAAMAAAABAAAAAAAIAAMAAAACAAAAAAAJAAMAAAADAAAAAAAHAAMAAAAEAAAAAAAIAAMAAAAFAAAAAAAJAAMAAAAGAAAAAAAHAAMAAAAHAAAAAAAIAAMAAAAIAAAAAAAJAAMAAAAJAAAAAAAHAAMAAAAKAAAAAAAIAAMAAAALAAAAAAAJAAMAAAAMAAAAAAAHAAMAAAANAAAAAAAIAAMAAAAOAAAAAAAJAAMAAAAPAAAAAAAHAAMAAAAQAAAAAAAIAAMAAAARAAAAAAAJAAMAAAASAAAAAAAHAAMAAAATAAAAAAAIAAMAAAAUAAAAAAAJAAMAAAA=")
 tile_set = SubResource("TileSet_rqfyi")
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("2_67lva")]
+position = Vector2(31, -20)
