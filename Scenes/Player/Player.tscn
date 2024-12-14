@@ -1,5 +1,6 @@
-[gd_scene load_steps=7 format=3 uid="uid://bm13eawgpamj2"]
+[gd_scene load_steps=8 format=3 uid="uid://bm13eawgpamj2"]
 
+[ext_resource type="Script" path="res://Scenes/Player/player.gd" id="1_7uyms"]
 [ext_resource type="Texture2D" uid="uid://biiskpeu6rgt5" path="res://Rocky Roads/Enemies/penguin.png" id="1_b8eku"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_44bq7"]
@@ -60,6 +61,7 @@ _data = {
 }
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
+script = ExtResource("1_7uyms")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0, 1)
