@@ -66,7 +66,7 @@ position = Vector2(-1, -191)
 position = Vector2(228, 20)
 
 [node name="Wall-right2" parent="." instance=ExtResource("7_clrt2")]
-position = Vector2(-26, -106)
+position = Vector2(-26, -111)
 
 [node name="Wall-right3" parent="Wall-right2" instance=ExtResource("7_clrt2")]
 position = Vector2(-1, -63)
