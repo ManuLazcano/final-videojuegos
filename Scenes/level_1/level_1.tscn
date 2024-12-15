@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://dfa4e18g58spu"]
+[gd_scene load_steps=9 format=3 uid="uid://dfa4e18g58spu"]
 
 [ext_resource type="Texture2D" uid="uid://bdxpk2k5pk82d" path="res://Assets/png/BG/BG.png" id="1_0jhsk"]
 [ext_resource type="PackedScene" uid="uid://bm13eawgpamj2" path="res://Scenes/Player/Player.tscn" id="2_67lva"]
 [ext_resource type="PackedScene" uid="uid://bqsdx4k3ijoex" path="res://Scenes/Plataform/plataform.tscn" id="4_ihvtt"]
 [ext_resource type="PackedScene" uid="uid://cnmcgchc1in6c" path="res://Scenes/Wall/wall.tscn" id="6_2imxr"]
 [ext_resource type="PackedScene" uid="uid://bgmgcnmdhnuy5" path="res://Scenes/Wall/wall_right.tscn" id="7_clrt2"]
+[ext_resource type="PackedScene" uid="uid://c0u0scu7366tp" path="res://Scenes/Coin/coin.tscn" id="8_1e31a"]
 [ext_resource type="Texture2D" uid="uid://bbr8pca6vetdw" path="res://Assets/png/Tiles/3.png" id="8_tqp1o"]
 [ext_resource type="PackedScene" uid="uid://d20rpxj78mfn8" path="res://Scenes/Wall/padding.tscn" id="9_571hn"]
 
@@ -70,3 +71,6 @@ position = Vector2(-26, -111)
 
 [node name="Wall-right3" parent="Wall-right2" instance=ExtResource("7_clrt2")]
 position = Vector2(-1, -63)
+
+[node name="Coin" parent="." instance=ExtResource("8_1e31a")]
+position = Vector2(182, -15)
