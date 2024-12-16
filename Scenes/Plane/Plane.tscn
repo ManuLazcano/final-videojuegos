@@ -1,0 +1,72 @@
+[gd_scene load_steps=10 format=3 uid="uid://crugqy7j4jt4a"]
+
+[ext_resource type="Script" path="res://Scenes/Plane/Plane.gd" id="1_7dtud"]
+[ext_resource type="Texture2D" uid="uid://bjhv5q02iab2" path="res://Assets/PlaneSprite/Pale-1.png" id="2_dqocq"]
+[ext_resource type="Texture2D" uid="uid://btjveyc3dqsjk" path="res://Assets/PlaneSprite/Pale-2.png" id="2_rn08l"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5lysr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_dqocq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_rn08l")
+}],
+"loop": true,
+"name": &"flying",
+"speed": 10.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_s8m3f"]
+radius = 21.9967
+height = 132.015
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_mppt4"]
+radius = 17.4642
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_7h65o"]
+radius = 3.0
+height = 48.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1uot8"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_oxwaf"]
+radius = 8.78187
+height = 39.9976
+
+[node name="Plane" type="Area2D"]
+script = ExtResource("1_7dtud")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(0, 4)
+scale = Vector2(0.335779, 0.298841)
+sprite_frames = SubResource("SpriteFrames_5lysr")
+animation = &"flying"
+autoplay = "flying"
+frame = 1
+frame_progress = 0.87271
+flip_h = true
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2(-1, 10)
+rotation = -1.58825
+shape = SubResource("CapsuleShape2D_s8m3f")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-4, -24)
+shape = SubResource("CircleShape2D_mppt4")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="."]
+position = Vector2(-69, 12)
+shape = SubResource("CapsuleShape2D_7h65o")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="."]
+position = Vector2(-24, 32)
+shape = SubResource("CircleShape2D_1uot8")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="."]
+position = Vector2(51, -16)
+rotation = 0.916298
+shape = SubResource("CapsuleShape2D_oxwaf")
