@@ -44,7 +44,7 @@ animations = [{
 "texture": ExtResource("2_u16d8")
 }],
 "loop": true,
-"name": &"duck",
+"name": &"down",
 "speed": 10.0
 }, {
 "frames": [{
@@ -172,7 +172,7 @@ texture_filter = 1
 position = Vector2(2.85937, 1.28907)
 scale = Vector2(0.0342372, 0.0356528)
 sprite_frames = SubResource("SpriteFrames_6wmvf")
-animation = &"duck"
+animation = &"down"
 autoplay = "idle"
 
 [node name="RunCollision" type="CollisionShape2D" parent="."]
