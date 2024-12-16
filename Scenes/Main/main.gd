@@ -93,25 +93,36 @@ func _process(delta):
 
 # Generar nuevos obstáculos en el suelo o aviones al azar
 func generate_obs():	
+	# Verifica si la lista de obstáculos está vacía o si el último obstáculo está lo suficientemente lejos del jugador
 	if obstacles.is_empty() or last_obs.position.x < score + randi_range(300, 500):
+		# Selecciona aleatoriamente un tipo de obstáculo del suelo (tronco, piedra, caja)
 		var obs_type = obstacle_types[randi() % obstacle_types.size()]
 		var obs
 		var max_obs = difficulty + 1
+		
+		 # Genera entre 1 y `max_obs` obstáculos del mismo tipo
 		for i in range(randi() % max_obs + 1):
 			obs = obs_type.instantiate()
+			# Obtiene la altura y escala del sprite del obstáculo para calcular su posición Y
 			var obs_height = obs.get_node("Sprite2D").texture.get_height()
 			var obs_scale = obs.get_node("Sprite2D").scale
+			 # Calcula la posición X del obstáculo, basada en la posición actual de la cámara/jugador
 			var obs_x : int = screen_size.x + score + 100 + (i * 100)
+			 # Calcula la posición Y del obstáculo, asegurándose de que quede sobre el suelo
 			var obs_y : int = screen_size.y - ground_height - (obs_height * obs_scale.y / 2) + 5
+			# Actualiza el último obstáculo generado y añade el obstáculo a la escena
 			last_obs = obs
 			add_obs(obs, obs_x, obs_y)
 		# Posibilidad de generar un avión
 		if difficulty == MAX_DIFFICULTY:
 			if (randi() % 2) == 0:
-				#generate bird obstacles
+				 # Instancia un nuevo avión
 				obs = plane_scene.instantiate()
+				# Calcula la posición X del avión (en el horizonte del jugador)
 				var obs_x : int = screen_size.x + score + 100
+				# Selecciona una altura aleatoria entre las alturas predefinidas para los aviones
 				var obs_y : int = plane_heights[randi() % plane_heights.size()]
+				
 				add_obs(obs, obs_x, obs_y)
 
 # Añadir obstáculos al árbol y a la lista de seguimiento
