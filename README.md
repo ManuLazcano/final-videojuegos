@@ -1,6 +1,6 @@
 # Diseño y Desarrollo de Videojuegos II
 
-El objetivo del juego es esquivar obstaculos mientras se suma puntos, esta inspirado en el juedo que te permite jugar Chrome cuando no hay internet.
+El objetivo del juego es esquivar obstaculos mientras se suma puntos, esta inspirado en el juego que te permite jugar Chrome cuando no hay internet.
 
 #### Características principales
 * Obstáculos dinámicos: Generación aleatoria de enemigos y obstáculos con dificultad progresiva.
