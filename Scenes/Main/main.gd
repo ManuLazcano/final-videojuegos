@@ -165,3 +165,4 @@ func game_over():
 	game_running = false
 	$GameOver.show()
 	$Music.stop()
+	$DeathSound.play()
