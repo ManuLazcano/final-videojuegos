@@ -31,6 +31,8 @@ func _ready():
 	screen_size = get_window().size
 	ground_height = $Ground.get_node("Sprite2D").texture.get_height()
 	$GameOver.get_node("Button").pressed.connect(new_game) # Conectar el botón de reinicio
+	load_high_score()  # Cargar la puntuación más alta guardada
+	$HUD.get_node("HighScoreLabel").text = "HIGH SCORE: " + str(high_score / SCORE_MODIFIER)
 	new_game()
 
 # Configuración inicial de las variables y el estado del juego
@@ -147,11 +149,37 @@ func hit_obs(body):
 func show_score():
 	$HUD.get_node("ScoreLabel").text = "SCORE: " + str(score / SCORE_MODIFIER)
 
-# Comprobar si se supera la puntuación más alta
+# Comprobar si se supera la puntuación más alta y guardar el puntaje
 func check_high_score():
 	if score > high_score:
 		high_score = score
+		save_high_score()  # Guardar el nuevo puntaje más alto en un archivo
 		$HUD.get_node("HighScoreLabel").text = "HIGH SCORE: " + str(high_score / SCORE_MODIFIER)
+
+# Guardar la puntuación más alta en un archivo JSON
+func save_high_score():
+	var save_data = {
+		"high_score": high_score
+	}
+	var file = FileAccess.open("user://highscore.json", FileAccess.WRITE)  # Abrir un archivo en modo escritura
+	if file:
+		file.store_string(JSON.stringify(save_data))  # Guardar los datos en formato JSON
+		file.close()
+
+# Cargar la puntuación más alta desde un archivo JSON
+func load_high_score():
+	var file = FileAccess.open("user://highscore.json", FileAccess.READ)  # Abrir un archivo en modo lectura
+	if file:
+		var json_string = file.get_as_text()  # Leer el contenido del archivo como texto
+		file.close()
+		
+		var json = JSON.new()
+		var parse_result = json.parse(json_string)  # Parsear el texto JSON a un objeto
+		if parse_result == OK:
+			var data = json.get_data()
+			high_score = data.get("high_score", 0)  # Obtener la puntuación guardada, o 0 si no existe
+		else:
+			print("Error al parsear el archivo JSON")
 
 # Ajustar la dificultad en función de la puntuación
 func adjust_difficulty():
