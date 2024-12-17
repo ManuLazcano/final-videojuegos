@@ -56,6 +56,8 @@ func new_game():
 	# Restablecer la interfaz
 	$HUD.get_node("StartLabel").show()
 	$GameOver.hide()
+	
+	$Music.play()
 
 
 func _process(delta):
@@ -162,3 +164,4 @@ func game_over():
 	get_tree().paused = true
 	game_running = false
 	$GameOver.show()
+	$Music.stop()
