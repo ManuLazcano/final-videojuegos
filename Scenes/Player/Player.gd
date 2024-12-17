@@ -13,7 +13,8 @@ func _physics_process(delta):
 		else:
 			$RunCollision.disabled = false # Habilitar la colisión para el estado de carrera
 			if Input.is_action_pressed("ui_accept"):
-				velocity.y = JUMP_SPEED				
+				velocity.y = JUMP_SPEED	
+				$JumpSound.play()			
 			elif Input.is_action_pressed("ui_down"):
 				$AnimatedSprite2D.play("down")
 				$RunCollision.disabled = true  # Deshabilitar colision de correr mientras está agachado

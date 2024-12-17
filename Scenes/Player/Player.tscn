@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://bhtein0chknfn"]
+[gd_scene load_steps=35 format=3 uid="uid://bhtein0chknfn"]
 
 [ext_resource type="Script" path="res://Scenes/Player/player.gd" id="1_fcw85"]
 [ext_resource type="Texture2D" uid="uid://fmuuff2l4kx2" path="res://Assets/DinoSprite/Jump (4).png" id="2_u16d8"]
@@ -30,6 +30,7 @@
 [ext_resource type="Texture2D" uid="uid://bitgp3437gcli" path="res://Assets/DinoSprite/Run (6).png" id="28_u07on"]
 [ext_resource type="Texture2D" uid="uid://bimhv8vydrisw" path="res://Assets/DinoSprite/Run (7).png" id="29_8hanc"]
 [ext_resource type="Texture2D" uid="uid://us20oxnn8uxf" path="res://Assets/DinoSprite/Run (8).png" id="30_vk4tg"]
+[ext_resource type="AudioStream" uid="uid://b55ngmwsvrt2c" path="res://Assets/Sounds/jump-up-245782.mp3" id="31_y35gu"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_6wmvf"]
 animations = [{
@@ -182,3 +183,7 @@ shape = SubResource("RectangleShape2D_whux2")
 [node name="DownCollision" type="CollisionShape2D" parent="."]
 position = Vector2(-0.0625, 2.25)
 shape = SubResource("RectangleShape2D_t1b5m")
+
+[node name="JumpSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("31_y35gu")
+volume_db = -10.532
