@@ -1,9 +1,10 @@
-[gd_scene load_steps=35 format=3 uid="uid://bhtein0chknfn"]
+[gd_scene load_steps=36 format=3 uid="uid://bhtein0chknfn"]
 
 [ext_resource type="Script" path="res://Scenes/Player/player.gd" id="1_fcw85"]
 [ext_resource type="Texture2D" uid="uid://fmuuff2l4kx2" path="res://Assets/DinoSprite/Jump (4).png" id="2_u16d8"]
 [ext_resource type="Texture2D" uid="uid://d0s23c8d1hn7h" path="res://Assets/DinoSprite/Jump (3).png" id="3_ytboc"]
 [ext_resource type="Texture2D" uid="uid://b1mlq23mn6ujg" path="res://Assets/DinoSprite/Idle (1).png" id="4_c12r0"]
+[ext_resource type="Texture2D" uid="uid://ci2v50d6cknpy" path="res://Assets/DinoSprite/Down.png" id="4_p0572"]
 [ext_resource type="Texture2D" uid="uid://ck04gc7bcy8bt" path="res://Assets/DinoSprite/Idle (2).png" id="5_rir4i"]
 [ext_resource type="Texture2D" uid="uid://b11i1wlp1uw6w" path="res://Assets/DinoSprite/Idle (3).png" id="6_jjlr6"]
 [ext_resource type="Texture2D" uid="uid://kkit8nfpkmk1" path="res://Assets/DinoSprite/Idle (4).png" id="7_mo77v"]
@@ -36,13 +37,7 @@
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_u16d8")
-}, {
-"duration": 1.0,
-"texture": ExtResource("3_ytboc")
-}, {
-"duration": 1.0,
-"texture": ExtResource("2_u16d8")
+"texture": ExtResource("4_p0572")
 }],
 "loop": true,
 "name": &"down",
@@ -158,10 +153,10 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_whux2"]
-size = Vector2(7.625, 12.875)
+size = Vector2(7.625, 15)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_t1b5m"]
-size = Vector2(7.625, 11.5)
+size = Vector2(14, 11.5)
 
 [node name="Player" type="CharacterBody2D"]
 z_index = 1
@@ -170,18 +165,18 @@ script = ExtResource("1_fcw85")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
-position = Vector2(2.85937, 1.28907)
-scale = Vector2(0.0342372, 0.0356528)
+position = Vector2(4.60936, -0.710935)
+scale = Vector2(0.0393842, 0.0441274)
 sprite_frames = SubResource("SpriteFrames_6wmvf")
 animation = &"down"
 autoplay = "idle"
 
 [node name="RunCollision" type="CollisionShape2D" parent="."]
-position = Vector2(-0.0625, 1.5625)
+position = Vector2(-0.0625, 0.5)
 shape = SubResource("RectangleShape2D_whux2")
 
 [node name="DownCollision" type="CollisionShape2D" parent="."]
-position = Vector2(-0.0625, 2.25)
+position = Vector2(3.125, 2.25)
 shape = SubResource("RectangleShape2D_t1b5m")
 
 [node name="JumpSound" type="AudioStreamPlayer" parent="."]
