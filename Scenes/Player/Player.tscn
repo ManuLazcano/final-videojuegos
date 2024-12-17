@@ -156,7 +156,7 @@ animations = [{
 size = Vector2(7.625, 15)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_t1b5m"]
-size = Vector2(14, 11.5)
+size = Vector2(8.75, 11.5)
 
 [node name="Player" type="CharacterBody2D"]
 z_index = 1
@@ -168,7 +168,7 @@ texture_filter = 1
 position = Vector2(4.60936, -0.710935)
 scale = Vector2(0.0393842, 0.0441274)
 sprite_frames = SubResource("SpriteFrames_6wmvf")
-animation = &"down"
+animation = &"run"
 autoplay = "idle"
 
 [node name="RunCollision" type="CollisionShape2D" parent="."]
@@ -176,7 +176,7 @@ position = Vector2(-0.0625, 0.5)
 shape = SubResource("RectangleShape2D_whux2")
 
 [node name="DownCollision" type="CollisionShape2D" parent="."]
-position = Vector2(3.125, 2.25)
+position = Vector2(0.5, 2.25)
 shape = SubResource("RectangleShape2D_t1b5m")
 
 [node name="JumpSound" type="AudioStreamPlayer" parent="."]
